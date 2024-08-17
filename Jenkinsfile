@@ -64,7 +64,30 @@ pipeline  {
                 '''
             }
         }
-
+        stage("remove") {
+            steps {
+                echo " ============== remune =================="
+                sh '''
+                docker stop $(docker ps -q) && docker rm $(docker ps -a -q)
+                '''
+            }
+        }    
+        stage("docker pull") {
+            steps {
+                echo " ============== pushing image =================="
+                sh '''
+               docker pull dimax555/ansivle
+                '''
+            }
+        }
+                  stage("docker run") {
+            steps {
+                echo " ============== pushing image =================="
+                sh '''
+                docker run dimax555/ansivle
+                '''
+            }
+        }  
       
     }
 }
