@@ -25,7 +25,7 @@ pipeline  {
             steps {
                 sh '''
                 cd /var/lib/jenkins/workspace/ansible-jenkins/Ansinle
-                docker build -t dimax555/ansivle .
+                docker build -t dimax555/ansible .
 
                 '''
             }
