@@ -80,7 +80,7 @@ pipeline  {
                 '''
             }
         }
-                  stage("docker run") {
+                  stage("docker run2") {
             steps {
                 echo " ============== pushing image =================="
                 sh '''
