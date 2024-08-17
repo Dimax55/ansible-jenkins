@@ -69,8 +69,11 @@ pipeline  {
                 echo " ============== remune =================="
                 sh '''
                 #docker stop $(docker ps -q) && docker rm $(docker ps -a -q)
-                docker system prume
-                echo "y"
+                CONTAINER_ID=$(docker ps -q -f "name=ansible")
+                if [ -n "$CONTAINER_ID" ]; then
+                    docker stop $CONTAINER_ID
+                    docker rm $CONTAINER_ID
+                fi
                 '''
             }
         }    
