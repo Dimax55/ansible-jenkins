@@ -68,7 +68,9 @@ pipeline  {
             steps {
                 echo " ============== remune =================="
                 sh '''
-                docker stop $(docker ps -q) && docker rm $(docker ps -a -q)
+                #docker stop $(docker ps -q) && docker rm $(docker ps -a -q)
+                docker system prume
+                echo "y"
                 '''
             }
         }    
