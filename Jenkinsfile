@@ -16,7 +16,7 @@ pipeline  {
             steps {
                 sh '''
                 cd /var/lib/jenkins/workspace/
-                rm -rf ansible-test1
+                rm -rf ansible-jenkins
                 git clone https://github.com/Dimax55/ansible-jenkins.git
                 '''
             }                
